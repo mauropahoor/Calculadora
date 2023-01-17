@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Murilo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input id="primeiro" size="4">
+    <select id="operador">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input id="segundo" size="4">
+    <button onclick="calcular()">Calcular</button>
+    <br>
+    <p>Resultado: <input id="resultado" value="" disabled></p>
+
+    <style>
+       @media only screen and (max-width: 768px) {
+        h1{
+            text-align: center;
+        }
+       }
+    </style>
+
+    <script>
+        function calcular(){
+            let primeiro = document.getElementById("primeiro").value;
+            let segundo = document.getElementById("segundo").value;
+            let operador = document.getElementById("operador").value;
+
+            let resultado = document.getElementById("resultado");
+            if(operador == "+")
+                resultado.setAttribute("value", parseInt(primeiro) + parseInt(segundo));
+            else if(operador == "-")
+                resultado.setAttribute("value", primeiro - segundo);
+            else if(operador == "*")
+                resultado.setAttribute("value", primeiro * segundo);
+            else if(operador == "/")
+                resultado.setAttribute("value", primeiro / segundo);
+            
+        }
+    </script>
+</body>
+</html>
